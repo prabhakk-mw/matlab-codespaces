@@ -16,5 +16,9 @@
             "installJupyterlab": true,
             "configureJupyterlabAllowOrigin": "*"
         }
+    },
+    "containerEnv": {
+        "MATLAB_USERWORKDIR": "${containerWorkspaceFolder}",
+        "MATLAB_USE_USERWORK": "1"
     }
 }
