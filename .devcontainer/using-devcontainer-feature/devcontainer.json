@@ -9,7 +9,9 @@
     "ghcr.io/prabhakk-mw/devcontainer-features/matlab": {
       // For options available, See: https://github.com/prabhakk-mw/devcontainer-features/tree/main/src/matlab
       "release": "r2024a",
-      "products": "MATLAB Symbolic_Math_Toolbox"
+      "products": "MATLAB Symbolic_Math_Toolbox",
+      "installMatlabProxy": "true",
+      "startInDesktop": "true"
     }
   },
   "containerUser": "vscode"
