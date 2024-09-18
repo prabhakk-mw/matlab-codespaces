@@ -33,7 +33,7 @@
             "MATLAB.installPath": "/opt/matlab/R2024b",
             "MATLAB.matlabConnectionTiming": "onStart",
             "MATLAB.telemetry": true,
-            "MATLAB.SignIn":true
+            "MATLAB.signIn":true
         }
     }
   }
