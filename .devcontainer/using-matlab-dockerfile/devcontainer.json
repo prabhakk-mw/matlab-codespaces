@@ -26,7 +26,7 @@
     "customizations": {
     "vscode": {
         "extensions": [
-            "${localWorkspaceFolderBasename}/matlab.vsix"
+            "${localWorkspaceFolder}/.devcontainer/using-matlab-dockerfile/matlab.vsix"
         ],
         "settings": {
             "MATLAB.indexWorkspace": true,
