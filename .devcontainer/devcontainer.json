@@ -1,8 +1,21 @@
 {
   "name": "MATLAB",
   // See https://hub.docker.com/r/mathworks/matlab/tags for available images.
-  "image": "mathworks/matlab:latest",
+  "image": "mathworks/matlab:R2024b",
   "hostRequirements": {
     "cpus": 4
+  },
+  "customizations": {
+    "vscode": {
+        "extensions": [
+            "MathWorks.language-matlab"
+        ],
+        "settings": {
+            "MATLAB.indexWorkspace": true,
+            "MATLAB.installPath": "/opt/matlab/R2024b",
+            "MATLAB.matlabConnectionTiming": "onStart",
+            "MATLAB.telemetry": true
+        }
+    }
   }
 }
