@@ -30,6 +30,8 @@ ARG LICENSE_SERVER
 # To check the available matlab-deps images, see: https://hub.docker.com/r/mathworks/matlab-deps
 FROM mathworks/matlab-deps:${MATLAB_RELEASE}
 
+COPY matlab.vsix /tmp/
+
 # Declare build arguments to use at the current build stage.
 ARG MATLAB_RELEASE
 ARG MATLAB_PRODUCT_LIST

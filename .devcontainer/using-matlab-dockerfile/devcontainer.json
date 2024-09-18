@@ -1,11 +1,11 @@
 {
-    "name": "Using matlab-dockerfile",
+    "name": "Using matlab-dockerfile with VSIX",
     "build": {
         // See: https://github.com/mathworks-ref-arch/matlab-dockerfile
         "dockerfile": "Dockerfile",
         "args": {
             "MATLAB_RELEASE": "r2024b",
-            "MATLAB_PRODUCT_LIST": "MATLAB Symbolic_Math_Toolbox"
+            "MATLAB_PRODUCT_LIST": "MATLAB"
         }
     },
     "hostRequirements": {
@@ -22,5 +22,19 @@
     // Installing GIT to support codespaces & devcontainer workflows
     "onCreateCommand": "sudo apt-get update && sudo apt-get install --no-install-recommends -y git python3 python3-pip xvfb",
     "updateContentCommand": "sudo python3 -m pip install --upgrade matlab-proxy",
-    "postStartCommand": "env MWI_APP_PORT=8888 MWI_ENABLE_TOKEN_AUTH=False matlab-proxy-app"
+    // "postStartCommand": "env MWI_APP_PORT=8888 MWI_ENABLE_TOKEN_AUTH=False matlab-proxy-app",
+    "customizations": {
+    "vscode": {
+        "extensions": [
+            "/tmp/matlab.vsix"
+        ],
+        "settings": {
+            "MATLAB.indexWorkspace": true,
+            "MATLAB.installPath": "/opt/matlab/R2024b",
+            "MATLAB.matlabConnectionTiming": "onStart",
+            "MATLAB.telemetry": true,
+            "MATLAB.SignIn":true
+        }
+    }
+  }
 }
