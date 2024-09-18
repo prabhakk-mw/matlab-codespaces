@@ -30,7 +30,7 @@
         ],
         "settings": {
             "MATLAB.indexWorkspace": true,
-            "MATLAB.installPath": "/opt/matlab/R2024b",
+            "MATLAB.installPath": "/opt/matlab/r2024b",
             "MATLAB.matlabConnectionTiming": "onStart",
             "MATLAB.telemetry": true,
             "MATLAB.signIn":true
