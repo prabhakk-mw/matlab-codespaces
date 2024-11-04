@@ -57,6 +57,9 @@ RUN adduser --shell /bin/bash --disabled-password --gecos "" matlab \
 USER matlab
 WORKDIR /home/matlab
 
+# Temporary workaround to issue introduced in MPM 2024.3
+ENV MW_SPROOT_SETTINGSXML=1
+
 # Run mpm to install MATLAB in the target location and delete the mpm installation afterwards.
 # If mpm fails to install successfully, then print the logfile in the terminal, otherwise clean up.
 # Pass in $HOME variable to install support packages into the user's HOME folder.
