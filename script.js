@@ -16,3 +16,14 @@ document.getElementById('dataForm').addEventListener('submit', function(event) {
     // Display the JSON data
     document.getElementById('jsonOutput').textContent = JSON.stringify(jsonData, null, 2);
 });
+
+document.getElementById('copyButton').addEventListener('click', function() {
+    const jsonOutput = document.getElementById('jsonOutput').textContent;
+
+    // Copy the JSON output to the clipboard
+    navigator.clipboard.writeText(jsonOutput).then(() => {
+        alert('JSON copied to clipboard!');
+    }).catch(err => {
+        console.error('Failed to copy: ', err);
+    });
+});
