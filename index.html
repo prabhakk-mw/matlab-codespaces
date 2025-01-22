@@ -3,27 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JSON Generator</title>
+    <title>MATLAB Dev Container Configuration Generator</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>JSON Generator</h1>
-        <form id="dataForm">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
+        <h1>MATLAB Dev Container Configuration Generator</h1>
+        <div class="flowchart">
+            <div class="question" id="question1">
+                <p>Do you want to use a Pre-Built Docker Image or a Dockerfile?</p>
+                <select id="image-or-dockerfile">
+                    <option value="image">I have a Docker Image.</option>
+                    <option value="dockerfile">No, I want to use a Dockerfile</option>
+                </select>
+                <button onclick="showTextBoxOrNot()">Next</button>
+            </div>
+            <div class="question" id="getImageName" style="display: none;">
+                <label for="image-name">Enter your image name:</label>
+                <input type="text" id="image-name" name="image-name" size="80" placeholder="Example : mathworks/matlab:r2024b" required><br><br>
+                <input type="checkbox" id="is-image-mw-based" name="is-image-mw-based" value="is-image-mw-based">
+                <label for="is-image-mw-based"> My image based on a <a href="https://hub.docker.com/r/mathworks/matlab" target="_blank">MathWorks DockerHub image?</a></label><br>
+                <button onclick="showNext('showFeaturesToAdd')">Next</button>
+            </div>
 
-            <label for="age">Age:</label>
-            <input type="number" id="age" name="age" required>
+            <div class="question" id="getBuildArgs" style="display: none;">
+                <label for="image-name">Enter build args (if any):</label>
+                <input type="text" id="build-args" name="build-args" size="80" placeholder='Example: "MATLAB_RELEASE": "r2024b", "MATLAB_PRODUCT_LIST": "MATLAB Symbolic_Math_Toolbox"'required><br><br>
+                <button onclick="showNext('showFeaturesToAdd')">Next</button>
+            </div>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-
-            <button type="submit">Generate JSON</button>
-        </form>
+            <div class="question" id="showFeaturesToAdd" style="display: none;">
+                <p>Select the features you would like to add..</p>
+                <input type="checkbox" id="use-devcontainer-features" name="use-devcontainer-features" value="use-devcontainer-features">
+                <label for="use-devcontainer-features">Use DevContainer Features</label><br>
+                <input type="checkbox" id="start-in-desktop" name="start-in-desktop" value="start-in-desktop">
+                <label for="start-in-desktop"> Start in MATLAB IDE</label><br>
+                <input type="checkbox" id="use-jupyter-notebooks" name="use-jupyter-notebooks" value="use-jupyter-notebooks">
+                <label for="use-jupyter-notebooks"> I want to use Jupyter Notebooks</label><br>
+                <button onclick="generateJSON()">Generate JSON</button>
+            </div>
+        </div>
         <h2>Generated JSON:</h2>
         <pre id="jsonOutput"></pre>
-        <button id="copyButton">Copy to Clipboard</button>
+        <button id="copyButton" style="display: none;">Copy to Clipboard</button>
     </div>
     <script src="script.js"></script>
 </body>
