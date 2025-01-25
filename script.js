@@ -13,6 +13,7 @@ function showTextBoxOrNot() {
 
 function generateJSON() {
     const isImage = document.getElementById('image-or-dockerfile').value == "image";
+    const isMathWorksBaseImage = document.getElementById('is-image-mw-based').checked;
 
     let config = {};
     config.name = "Generated DevContainer template"
@@ -68,6 +69,15 @@ function generateJSON() {
     config.customizations = {};
     vscode = config.customizations.vscode = {};
     vscode.extensions = ["MathWorks.language-matlab", "ms-toolsai.jupyter", "ms-python.python"];
+
+    settings = config.customizations.settings = {};
+    settings["MATLAB.signIn"] = true;
+    if (isMathWorksBaseImage) {
+        settings["python.venvPath"] = "/home/matlab/.local/pipx/venvs/";
+        settings["jupyter.kernels.trusted"] = "/home/matlab/.local/pipx/venvs/matlab-proxy/share/jupyter/kernels/jupyter_matlab_kernel/kernel.json";
+    } else {
+        settings["jupyter.kernels.trusted"] = "/usr/share/jupyter/kernels/jupyter_matlab_kernel/kernel.json";
+    }
 
 
 
