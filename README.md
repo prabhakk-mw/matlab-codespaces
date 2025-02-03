@@ -381,8 +381,7 @@ When you have `JupyterLab` and the [MATLAB Integration for Jupyter](https://gith
    ![Access the MATLAB in a browser window](https://github.com/mathworks/jupyter-matlab-proxy/raw/main/img/JupyterMATLABDesktop.gif)
 
 
-## Related Links
-
+## Related Links 
 - [Overview of Codespaces (GitHub)](https://docs.github.com/en/codespaces/overview)
 - [Development Container Features (GitHub)](https://github.com/devcontainers/features/)
 - [Development Container Specification (Microsoft&reg;)](https://containers.dev/implementors/spec/)
@@ -391,6 +390,6 @@ When you have `JupyterLab` and the [MATLAB Integration for Jupyter](https://gith
 
 ---
 
-Copyright 2024 The MathWorks, Inc.
+Copyright 2024-2025 The MathWorks, Inc.
 
 ---
