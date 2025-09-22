@@ -52,7 +52,7 @@
         "python.venvPath": "/home/matlab/.local/pipx/venvs/",
         // Marks MATLAB Kernel as a trusted source
         "jupyter.kernels.trusted": [
-          "/home/matlab/.local/pipx/venvs/matlab-proxy/share/jupyter/kernels/jupyter_matlab_kernel/kernel.json"
+          "/home/matlab/.local/share/pipx/venvs/matlab-proxy/share/jupyter/kernels/jupyter_matlab_kernel/kernel.json"
         ]
       }
     }
