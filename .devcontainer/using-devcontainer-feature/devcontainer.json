@@ -14,17 +14,24 @@
   "features": {
     "ghcr.io/mathworks/devcontainer-features/matlab": {
       // For more options, See: https://github.com/mathworks/devcontainer-features/tree/main/src/matlab
-      "release": "r2024b",
-      "products": "MATLAB Symbolic_Math_Toolbox",
+      "release": "r2025b",
+      "products": "MATLAB Symbolic_Math_Toolbox Simulink",
       "installMatlabProxy": "true",
       "startInDesktop": "true",
-      "installJupyterMatlabProxy": true
+      "installJupyterMatlabProxy": true,
+      "installJupyterLab": true,
+      "installMatlabEngineForPython": true
     },
     "ghcr.io/devcontainers/features/python": {
-      "version": "os-provided",
-      "installJupyterlab": true,
-      "configureJupyterlabAllowOrigin": "*"
+      "version": "os-provided"
+      // Cannot use the Python feature to install JupyterLab because of:
+      // https://github.com/devcontainers/features/issues/1403
+      // "installJupyterlab": true,
+      // "configureJupyterlabAllowOrigin": "*"
     }
+  },
+  "onCreateCommand": {
+      "install-dependencies": "sudo apt-get update && sudo apt-get install --no-install-recommends -y git fluxbox"
   },
   "portsAttributes": {
     "8888": {

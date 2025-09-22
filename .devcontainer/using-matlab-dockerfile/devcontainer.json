@@ -13,12 +13,12 @@
     "build": {
         "dockerfile": "Dockerfile",
         "args": {
-            "MATLAB_RELEASE": "r2024b",
-            "MATLAB_PRODUCT_LIST": "MATLAB Symbolic_Math_Toolbox"
+            "MATLAB_RELEASE": "r2025b",
+            "MATLAB_PRODUCT_LIST": "MATLAB Symbolic_Math_Toolbox Simulink"
         }
     },
     "onCreateCommand": {
-        "install-dependencies": "sudo apt-get update && sudo apt-get install --no-install-recommends -y git python3 python3-pip xvfb"
+        "install-dependencies": "sudo apt-get update && sudo apt-get install --no-install-recommends -y git python3 python3-pip xvfb fluxbox"
     },
     "updateContentCommand": {
         "install-mifj-and-jupyterlab": "sudo python3 -m pip install --upgrade matlab-proxy jupyter-matlab-proxy jupyterlab && sudo install-matlab-kernelspec"

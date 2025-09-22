@@ -12,7 +12,7 @@
   "name": "Built using MathWorks Docker Hub Image",
   "image": "mathworks/matlab:latest",
   "onCreateCommand": {
-    "install-dependencies": "sudo apt-get update && sudo apt-get install --no-install-recommends -y git xvfb"
+    "install-dependencies": "sudo apt-get update && sudo apt-get install --no-install-recommends -y git"
   },
   "updateContentCommand": {
     // dockerhub containers from R2023a onwards use PIPX to install matlab-proxy
